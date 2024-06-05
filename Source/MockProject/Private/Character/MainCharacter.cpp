@@ -23,9 +23,7 @@ AMainCharacter::AMainCharacter()
 	LeftController = CreateDefaultSubobject<UMotionControllerComponent>(TEXT("Left Controller"));
 	RightController = CreateDefaultSubobject<UMotionControllerComponent>(TEXT("Right Controller"));
 
-	Weapon = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Weapon"));
-	Weapon->SetupAttachment(RightController, FName("GripPoint"));
-	Weapon->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+	
 
 	CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("Spring Arm"));
 	CameraBoom->SetupAttachment(GetRootComponent());
