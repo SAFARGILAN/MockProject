@@ -16,7 +16,7 @@ AMainCharacter::AMainCharacter()
 	PrimaryActorTick.bCanEverTick = true;
 
 	VROrigin = CreateDefaultSubobject<USceneComponent>(TEXT("VROrigin"));
-	VROrigin = RootComponent;
+	SetRootComponent(VROrigin);
 
 	LeftController = CreateDefaultSubobject<UMotionControllerComponent>(TEXT("Left Controller"));
 	RightController = CreateDefaultSubobject<UMotionControllerComponent>(TEXT("Right Controller"));
