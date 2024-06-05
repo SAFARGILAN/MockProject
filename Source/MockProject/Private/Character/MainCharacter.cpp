@@ -6,6 +6,8 @@
 #include "Character/MainCharacter.h"
 #include"MotionControllerComponent.h"
 #include"Components/SkeletalMeshComponent.h"
+#include"Camera/CameraComponent.h"
+#include "GameFramework/SpringArmComponent.h"
 
 
 
@@ -16,7 +18,7 @@ AMainCharacter::AMainCharacter()
 	PrimaryActorTick.bCanEverTick = true;
 
 	VROrigin = CreateDefaultSubobject<USceneComponent>(TEXT("VROrigin"));
-	SetRootComponent(VROrigin);
+	
 
 	LeftController = CreateDefaultSubobject<UMotionControllerComponent>(TEXT("Left Controller"));
 	RightController = CreateDefaultSubobject<UMotionControllerComponent>(TEXT("Right Controller"));
@@ -24,6 +26,16 @@ AMainCharacter::AMainCharacter()
 	Weapon = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Weapon"));
 	Weapon->SetupAttachment(RightController, FName("GripPoint"));
 	Weapon->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+
+	CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("Spring Arm"));
+	CameraBoom->SetupAttachment(GetRootComponent());
+	CameraBoom->TargetArmLength = 150.0f;
+
+	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("View Camera"));
+	Camera->SetupAttachment(CameraBoom);
+	
+	
+	
 }
 
 // Called when the game starts or when spawned
@@ -37,6 +49,8 @@ void AMainCharacter::BeginPlay()
 void AMainCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
+	AddMovementInput(this->GetActorForwardVector(), 1.0f);
 
 }
 

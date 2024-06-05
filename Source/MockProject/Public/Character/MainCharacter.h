@@ -9,6 +9,8 @@
 class UMotionControllerComponent;
 class USceneComponent;
 class USkeletalMeshComponent;
+class UCameraComponent;
+class USpringArmComponent;
 
 UCLASS()
 class MOCKPROJECT_API AMainCharacter : public ACharacter
@@ -33,6 +35,12 @@ protected:
 
 	UPROPERTY(EditAnywhere)
 		TObjectPtr<USkeletalMeshComponent> Weapon;
+
+	UPROPERTY(EditAnywhere)
+	UCameraComponent* Camera;
+
+	UPROPERTY(VisibleAnywhere)
+		USpringArmComponent* CameraBoom;
 
 
 public:	
