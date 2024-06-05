@@ -8,7 +8,6 @@
 
 class UMotionControllerComponent;
 class USceneComponent;
-class USkeletalMeshComponent;
 class UCameraComponent;
 class USpringArmComponent;
 
@@ -33,8 +32,7 @@ protected:
 
 	USceneComponent* VROrigin;
 
-	UPROPERTY(EditAnywhere)
-		TObjectPtr<USkeletalMeshComponent> Weapon;
+
 
 	UPROPERTY(EditAnywhere)
 	UCameraComponent* Camera;
