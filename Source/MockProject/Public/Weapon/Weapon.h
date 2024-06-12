@@ -7,6 +7,7 @@
 #include "Weapon.generated.h"
 
 class UStaticMeshComponent;
+class AMainCharacter;
 
 UCLASS()
 class MOCKPROJECT_API AWeapon : public AActor
@@ -23,6 +24,8 @@ protected:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 		TObjectPtr<UStaticMeshComponent> WeaponMesh;
+
+	AMainCharacter* CharacterRef;
 
 public:	
 	// Called every frame
