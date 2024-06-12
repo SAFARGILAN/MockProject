@@ -2,6 +2,7 @@
 
 #include "Weapon/Weapon.h"
 #include"Components/StaticMeshComponent.h"
+#include"MotionControllerComponent.h"
 #include"Character/MainCharacter.h"
 
 // Sets default values
@@ -17,7 +18,7 @@ void AWeapon::BeginPlay()
 {
 	Super::BeginPlay();
 	FAttachmentTransformRules TransformRules(EAttachmentRule::SnapToTarget, true);
-	WeaponMesh->SetupAttachment(CharacterRef->GetMesh(), FName("WeaponSocket"));
+	WeaponMesh->SetupAttachment(CharacterRef->RightController, FName("WeaponSocket"));
 	 
 }
 
