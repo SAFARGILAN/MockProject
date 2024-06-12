@@ -8,6 +8,7 @@
 
 class UStaticMeshComponent;
 class AMainCharacter;
+class UBoxComponent;
 
 UCLASS()
 class MOCKPROJECT_API AWeapon : public AActor
@@ -27,6 +28,8 @@ protected:
 
 	AMainCharacter* CharacterRef;
 
+	UPROPERTY(VisibleAnywhere)
+	TObjectPtr<UBoxComponent> WeaponCollisionBox;
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
