@@ -2,9 +2,8 @@
 
 #include "Weapon/Weapon.h"
 #include"Components/StaticMeshComponent.h"
-#include"MotionControllerComponent.h"
 #include"Components/BoxComponent.h"
-#include"Character/MainCharacter.h"
+
 
 // Sets default values
 AWeapon::AWeapon()
@@ -14,15 +13,14 @@ AWeapon::AWeapon()
 	WeaponMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("WeaponMesh"));
 
 	WeaponCollisionBox = CreateDefaultSubobject<UBoxComponent>(TEXT("WeaponCollisonBox"));
-	WeaponCollisionBox->SetupAttachment(GetRootComponent());
+	WeaponCollisionBox->SetupAttachment(WeaponMesh);
 }
 
 // Called when the game starts or when spawned
 void AWeapon::BeginPlay()
 {
 	Super::BeginPlay();
-	//FAttachmentTransformRules TransformRules(EAttachmentRule::SnapToTarget, true);
-	//WeaponMesh->SetupAttachment(CharacterRef->RightController, FName("WeaponSocket"));
+
 	 
 }
 
