@@ -7,7 +7,6 @@
 #include "MainCharacter.generated.h"
 
 class UMotionControllerComponent;
-class USceneComponent;
 class UCameraComponent;
 class USpringArmComponent;
 
@@ -25,15 +24,10 @@ protected:
 	virtual void BeginPlay() override;
 
 	
-	USceneComponent* VROrigin;
+	
 
 
 
-	UPROPERTY(EditAnywhere)
-	UCameraComponent* Camera;
-
-	UPROPERTY(VisibleAnywhere)
-		USpringArmComponent* CameraBoom;
 
 
 public:	
@@ -48,5 +42,20 @@ public:
 
 	UPROPERTY(EditAnywhere)
 		UMotionControllerComponent* RightController;
+
+	UPROPERTY(EditAnywhere)
+		UCameraComponent* Camera;
+
+	UPROPERTY(EditAnywhere)
+		USpringArmComponent* CameraBoom;
+
+	UPROPERTY(EditAnywhere)
+		TSubclassOf<class AWeapon> WeaponClass;
+
+	UPROPERTY(EditAnywhere)
+		USkeletalMeshComponent* Right;
+
+	UPROPERTY(EditAnywhere)
+		USkeletalMeshComponent* Left;
 
 };

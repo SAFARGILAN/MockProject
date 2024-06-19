@@ -6,9 +6,9 @@
 
 #include "Character/MainCharacter.h"
 #include"MotionControllerComponent.h"
-#include"Components/SkeletalMeshComponent.h"
 #include"Camera/CameraComponent.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "Weapon/Weapon.h"
 
 
 
@@ -17,21 +17,19 @@ AMainCharacter::AMainCharacter()
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-
-	VROrigin = CreateDefaultSubobject<USceneComponent>(TEXT("VROrigin"));
-	
-
-	LeftController = CreateDefaultSubobject<UMotionControllerComponent>(TEXT("Left Controller"));
-	RightController = CreateDefaultSubobject<UMotionControllerComponent>(TEXT("Right Controller"));
-
-	
-
-	CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("Spring Arm"));
+	LeftController = CreateDefaultSubobject<UMotionControllerComponent>(FName("LeftController"));
+	LeftController->SetupAttachment(GetRootComponent());
+	Left = CreateDefaultSubobject<USkeletalMeshComponent>(FName("LeftMesh"));
+	Left->SetupAttachment(LeftController);
+	RightController = CreateDefaultSubobject<UMotionControllerComponent>(FName("RightController"));
+	RightController->SetupAttachment(GetRootComponent());
+	Right = CreateDefaultSubobject<USkeletalMeshComponent>(FName("RightMesh"));
+	Right->SetupAttachment(RightController);
+	CameraBoom = CreateDefaultSubobject<USpringArmComponent>(FName("CameraBoom"));
 	CameraBoom->SetupAttachment(GetRootComponent());
-	CameraBoom->TargetArmLength = 150.0f;
-
-	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("View Camera"));
+	Camera = CreateDefaultSubobject<UCameraComponent>(FName("Camera"));
 	Camera->SetupAttachment(CameraBoom);
+	
 	
 	
 	
@@ -41,6 +39,14 @@ AMainCharacter::AMainCharacter()
 void AMainCharacter::BeginPlay()
 {
 	Super::BeginPlay();
+
+	UWorld* World = GetWorld();
+	if (World && WeaponClass)
+	{
+		AWeapon* DefaultWeapon = World->SpawnActor<AWeapon>(WeaponClass);
+		FAttachmentTransformRules TransformRules(EAttachmentRule::SnapToTarget, true);
+		DefaultWeapon->AttachToComponent(Right, TransformRules , FName("RightHandSocket"));
+	}
 	
 }
 
