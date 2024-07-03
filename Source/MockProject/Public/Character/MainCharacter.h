@@ -9,6 +9,7 @@
 class UMotionControllerComponent;
 class UCameraComponent;
 class USpringArmComponent;
+class USceneComponent;
 
 UCLASS()
 class MOCKPROJECT_API AMainCharacter : public ACharacter
@@ -57,5 +58,7 @@ public:
 
 	UPROPERTY(EditAnywhere)
 		USkeletalMeshComponent* Left;
+
+	
 
 };
