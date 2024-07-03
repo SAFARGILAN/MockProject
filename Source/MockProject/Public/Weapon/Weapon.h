@@ -6,6 +6,7 @@
 #include "GameFramework/Actor.h"
 #include "Weapon.generated.h"
 
+
 class UStaticMeshComponent;
 class AMainCharacter;
 class UBoxComponent;
@@ -47,5 +48,7 @@ private:
 
 	UPROPERTY(VisibleAnywhere)
 	USceneComponent* BoxTraceEnd;
+	UPROPERTY(VisibleAnywhere)
+	TSubclassOf<UInterface> GetHit;
 	
 };
