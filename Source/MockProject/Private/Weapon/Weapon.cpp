@@ -6,6 +6,7 @@
 #include"Kismet/KismetSystemLibrary.h"
 
 
+
 // Sets default values
 AWeapon::AWeapon()
 {
@@ -53,7 +54,7 @@ void AWeapon::OnOverlapBegin(UPrimitiveComponent* OverlappedComponent, AActor* O
 		BoxHit,
 		true
 	);
-		
+	
 }
 
 // Called every frame
