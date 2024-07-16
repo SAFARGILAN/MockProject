@@ -9,6 +9,7 @@
 #include"Camera/CameraComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Weapon/Weapon.h"
+#include"GameFramework/Character.h"
 
 
 
@@ -49,6 +50,8 @@ void AMainCharacter::BeginPlay()
 	}
 	
 }
+
+
 
 // Called every frame
 void AMainCharacter::Tick(float DeltaTime)
