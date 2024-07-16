@@ -11,6 +11,7 @@ class UCameraComponent;
 class USpringArmComponent;
 class USceneComponent;
 
+
 UCLASS()
 class MOCKPROJECT_API AMainCharacter : public ACharacter
 {
@@ -23,6 +24,7 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+	
 
 	
 	
@@ -59,6 +61,7 @@ public:
 	UPROPERTY(EditAnywhere)
 		USkeletalMeshComponent* Left;
 
+	
 	
 
 };
