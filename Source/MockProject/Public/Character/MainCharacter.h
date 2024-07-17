@@ -46,7 +46,7 @@ public:
 	UPROPERTY(EditAnywhere)
 		UMotionControllerComponent* RightController;
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere , BlueprintReadOnly)
 		UCameraComponent* Camera;
 
 	UPROPERTY(EditAnywhere)
