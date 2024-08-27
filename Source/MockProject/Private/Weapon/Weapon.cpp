@@ -14,11 +14,11 @@ AWeapon::AWeapon()
 	PrimaryActorTick.bCanEverTick = true;
 	WeaponMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("WeaponMesh"));
 
-	WeaponCollisionBox = CreateDefaultSubobject<UBoxComponent>(TEXT("WeaponCollisonBox"));
-	WeaponCollisionBox->SetupAttachment(WeaponMesh);
-	WeaponCollisionBox->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
-	WeaponCollisionBox->SetCollisionResponseToAllChannels(ECR_Overlap);
-	WeaponCollisionBox->SetCollisionResponseToChannel(ECollisionChannel::ECC_Pawn, ECollisionResponse::ECR_Ignore);
+//	WeaponCollisionBox = CreateDefaultSubobject<UBoxComponent>(TEXT("WeaponCollisonBox"));
+	//WeaponCollisionBox->SetupAttachment(WeaponMesh);
+	//WeaponCollisionBox->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
+	//WeaponCollisionBox->SetCollisionResponseToAllChannels(ECR_Overlap);
+	//WeaponCollisionBox->SetCollisionResponseToChannel(ECollisionChannel::ECC_Pawn, ECollisionResponse::ECR_Ignore);
 
 	BoxTraceStart = CreateDefaultSubobject<USceneComponent>(TEXT("BoxTraceStart"));
 	BoxTraceStart->SetupAttachment(GetRootComponent());
@@ -31,7 +31,7 @@ void AWeapon::BeginPlay()
 {
 	Super::BeginPlay();
 
-	WeaponCollisionBox->OnComponentBeginOverlap.AddDynamic(this, &AWeapon::OnOverlapBegin);
+	//WeaponCollisionBox->OnComponentBeginOverlap.AddDynamic(this, &AWeapon::OnOverlapBegin);
 }
 
 void AWeapon::OnOverlapBegin(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)

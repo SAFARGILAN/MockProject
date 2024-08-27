@@ -30,8 +30,8 @@ protected:
 
 	AMainCharacter* CharacterRef;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
-	TObjectPtr<UBoxComponent> WeaponCollisionBox;
+	//UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	//TObjectPtr<UBoxComponent> WeaponCollisionBox;
 
 	
 
