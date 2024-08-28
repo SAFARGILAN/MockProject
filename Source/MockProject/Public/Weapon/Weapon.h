@@ -30,6 +30,9 @@ protected:
 
 	AMainCharacter* CharacterRef;
 
+	UPROPERTY(BlueprintReadOnly)
+		USceneComponent* BoxTraceEnd;
+
 	//UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 	//TObjectPtr<UBoxComponent> WeaponCollisionBox;
 
@@ -46,8 +49,7 @@ private:
 	UPROPERTY(VisibleAnywhere)
 	USceneComponent* BoxTraceStart;
 
-	UPROPERTY(VisibleAnywhere)
-	USceneComponent* BoxTraceEnd;
+	
 	UPROPERTY(VisibleAnywhere)
 	TSubclassOf<UInterface> GetHit;
 	
