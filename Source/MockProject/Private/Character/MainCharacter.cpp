@@ -58,7 +58,7 @@ void AMainCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	AddMovementInput(this->GetActorForwardVector(), 10.0f);
+	//AddMovementInput(this->GetActorForwardVector(), 10.0f);
 
 }
 
