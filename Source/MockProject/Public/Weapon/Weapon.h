@@ -28,6 +28,8 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 		TObjectPtr<UStaticMeshComponent> WeaponMesh;
 
+	
+
 	AMainCharacter* CharacterRef;
 
 	UPROPERTY(BlueprintReadOnly)
