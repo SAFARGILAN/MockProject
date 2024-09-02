@@ -41,13 +41,13 @@ void AMainCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 
-	UWorld* World = GetWorld();
-	if (World && WeaponClass)
-	{
-		AWeapon* DefaultWeapon = World->SpawnActor<AWeapon>(WeaponClass);
-		FAttachmentTransformRules TransformRules(EAttachmentRule::SnapToTarget, true);
-		DefaultWeapon->AttachToComponent(Right, TransformRules , FName("RightHandSocket"));
-	}
+	////UWorld* World = GetWorld();
+	//if (World && WeaponClass)
+	//{
+	//	AWeapon* DefaultWeapon = World->SpawnActor<AWeapon>(WeaponClass);
+	//	FAttachmentTransformRules TransformRules(EAttachmentRule::SnapToTarget, true);
+	//	DefaultWeapon->AttachToComponent(Right, TransformRules , FName("RightHandSocket"));
+	//}
 	
 }
 
