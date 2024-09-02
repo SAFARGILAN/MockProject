@@ -43,7 +43,7 @@ public:
 	UPROPERTY(EditAnywhere)
 		UMotionControllerComponent* LeftController;
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(BlueprintReadOnly)
 		UMotionControllerComponent* RightController;
 
 	UPROPERTY(EditAnywhere , BlueprintReadOnly)
