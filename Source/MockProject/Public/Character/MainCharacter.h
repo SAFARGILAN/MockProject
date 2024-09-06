@@ -58,7 +58,7 @@ public:
 	UPROPERTY(EditAnywhere)
 		USkeletalMeshComponent* Right;
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere , BlueprintReadOnly )
 		USkeletalMeshComponent* Left;
 
 	
