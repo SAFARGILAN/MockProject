@@ -72,3 +72,12 @@ Plugins/*/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+BuildV4/Windows/Engine/Content/Renderer/TessellationTable.bin
+BuildV4/Windows/Engine/Content/Slate/Cursor/invisible.cur
+BuildV4/Windows/Manifest_NonUFSFiles_Win64.txt
+BuildV4/Windows/Manifest_UFSFiles_Win64.txt
+BuildV4/Windows/MockProject/Content/Paks/global.ucas
+BuildV4/Windows/MockProject/Content/Paks/global.utoc
+BuildV4/Windows/MockProject/Content/Paks/MockProject-Windows.pak
+BuildV4/Windows/MockProject/Content/Paks/MockProject-Windows.ucas
+BuildV4/Windows/MockProject/Content/Paks/MockProject-Windows.utoc
